@@ -25,6 +25,8 @@ export default function ResumePreview({ content, selectedSummary, selectedProjec
           <p>
             {edu.school} - {edu.location}
           </p>
+          <p>{edu.dates}</p>
+          {edu.courses?.length ? <p>Courses: {edu.courses.join(', ')}</p> : null}
         </div>
       ))}
 

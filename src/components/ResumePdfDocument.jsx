@@ -69,6 +69,8 @@ export default function ResumePdfDocument({ content, selectedSummary, selectedPr
             <Text>
               {edu.school} - {edu.location}
             </Text>
+            <Text>{edu.dates}</Text>
+            {edu.courses?.length ? <Text>Courses: {edu.courses.join(', ')}</Text> : null}
           </View>
         ))}
 
@@ -81,7 +83,7 @@ export default function ResumePdfDocument({ content, selectedSummary, selectedPr
 
         <Text style={styles.sectionTitle}>Projects</Text>
         {selectedProjects.map((project) => (
-          <View key={project.id} style={styles.line}>
+          <View key={project.id} style={styles.line} wrap={false}>
             <Text style={styles.heading}>{project.title}</Text>
             {project.highlights.map((highlight) => (
               <Text key={highlight} style={styles.bullet}>
@@ -93,7 +95,7 @@ export default function ResumePdfDocument({ content, selectedSummary, selectedPr
 
         <Text style={styles.sectionTitle}>Professional Experience</Text>
         {content.professionalExperience.map((job) => (
-          <View key={`${job.company}-${job.role}`} style={styles.line}>
+          <View key={`${job.company}-${job.role}`} style={styles.line} wrap={false}>
             <Text style={styles.heading}>
               {job.role} - {job.company} ({job.dates})
             </Text>

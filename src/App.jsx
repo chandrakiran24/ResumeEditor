@@ -5,9 +5,9 @@ import ResumePdfDocument from './components/ResumePdfDocument';
 import { contentLibrary, jobTitles } from './data/contentLibrary';
 
 const summaryToSkills = {
-  'Software Engineering': ['Software', 'Protocols', 'Tools'],
-  'Hardware/FPGA': ['Hardware', 'Protocols', 'Tools'],
-  'Quantitative Research': ['Software', 'Protocols', 'Tools']
+  'Software Engineering': ['Programming', 'Development Tools', 'Systems and Methodologies', 'Protocols and Techniques'],
+  'Hardware/FPGA': ['Programming', 'Development Tools', 'Protocols and Techniques'],
+  'Quantitative Research': ['Programming', 'Development Tools', 'Systems and Methodologies', 'Protocols and Techniques']
 };
 
 function getSummaryByJobTitle(title) {
@@ -84,8 +84,13 @@ export default function App() {
       const anchor = document.createElement('a');
       anchor.href = url;
       anchor.download = `${contentLibrary.profile.name.replace(/\s+/g, '_')}_Resume.pdf`;
+      document.body.appendChild(anchor);
       anchor.click();
-      URL.revokeObjectURL(url);
+      document.body.removeChild(anchor);
+      setTimeout(() => URL.revokeObjectURL(url), 100);
+    } catch (error) {
+      console.error('PDF Generation failed:', error);
+      alert('Failed to generate PDF. Please try again.');
     } finally {
       setIsGenerating(false);
     }

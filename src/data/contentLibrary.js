@@ -1,19 +1,15 @@
 export const contentLibrary = {
   profile: {
-    name: 'Alex Candidate',
-    title: 'Full-Stack Engineer',
+    name: 'Chandra Kiran Narala',
+    title: 'Software Engineer',
     location: 'New York, NY',
-    email: 'alex.candidate@email.com',
-    phone: '+1 (212) 555-0129',
-    links: [
-      { label: 'LinkedIn', url: 'linkedin.com/in/alexcandidate' },
-      { label: 'GitHub', url: 'github.com/alexcandidate' },
-      { label: 'Portfolio', url: 'alexcandidate.dev' }
-    ]
+    email: 'naralachandrakiran24@gmail.com',
+    phone: '1-551-331-7492',
+    links: [{ label: 'LinkedIn', url: 'linkedin.com/in/chandrakirannarala' }]
   },
   summaries: {
     'Software Engineering':
-      'Software engineer with experience building high-throughput backend services, real-time data pipelines, and developer-first tooling. Focused on clear architecture, reliable delivery, and measurable business impact.',
+      'Software Engineer with experience building distributed data pipelines, high-throughput microservices, and performance-critical systems in Python and C++. Strong background in scalable system design, fault-tolerant architectures, and algorithm optimization, with a track record of shipping production systems under real-time constraints.',
     'Hardware/FPGA':
       'Hardware and FPGA engineer with hands-on development in Verilog and low-latency systems. Experienced in translating protocol requirements into deterministic, testable designs for production environments.',
     'Quantitative Research':
@@ -21,34 +17,47 @@ export const contentLibrary = {
   },
   education: [
     {
-      degree: 'Master of Science in Computer Engineering',
-      school: 'NYU Tandon School of Engineering',
-      location: 'Brooklyn, NY'
+      degree: 'MS in Electrical Engineering',
+      school: 'NYU Tandon',
+      location: 'USA',
+      dates: 'Jan 2022 - May 2024',
+      courses: ['Computer System Architecture', 'Advanced VLSI', 'Advanced Hardware Design', 'DSP']
     },
     {
-      degree: 'Bachelor of Engineering',
-      school: 'Gayatri Vidya Parishad College of Engineering (GVPCOE)',
-      location: 'Visakhapatnam, India'
+      degree: 'Bachelors in Electronics and Communications Engineering',
+      school: 'GVPCOE',
+      location: 'India',
+      dates: 'Jul 2016 - Sept 2020',
+      courses: [
+        'Data Structures and Algorithms',
+        'System Design and Optimization',
+        'Computer Architecture',
+        'Digital Signal Processing',
+        'OS'
+      ]
     }
   ],
   professionalExperience: [
     {
-      role: 'Software Engineer',
-      company: 'FinTech Systems Inc.',
-      dates: '2022 - Present',
+      role: 'SRAM DV Engineer',
+      company: 'NYU, USA',
+      dates: 'Jan 2024 - Nov 2025',
       bullets: [
-        'Delivered event-driven microservices for trade and risk analytics that improved data freshness by 35%.',
-        'Partnered with product and operations teams to automate compliance reporting workflows.',
-        'Implemented observability standards across services to reduce incident resolution time.'
+        'Led a 4-person research team to optimize a 256x4-bit SRAM array in 7 nm FinFET, using mathematical modeling and statistical analysis to reduce power consumption by 20% compared to a 6T SRAM cell.',
+        'Developed and verified SRAM testbenches using Cocotb, enabling Python-based verification with functional and latency testing.',
+        'Executed timing analysis to achieve timing closure while optimizing performance, area, and power trade-offs, resolving critical timing violations for reliable read and write operations at higher clock frequencies.',
+        'Collaborated with physical design team on RTL-level fixes during timing closure with hands-on exposure to Cadence ASIC flow.'
       ]
     },
     {
-      role: 'Engineering Intern',
-      company: 'Edge Compute Labs',
-      dates: '2021 - 2022',
+      role: 'Software Engineer',
+      company: 'Cognizant Technology Solutions, India',
+      dates: 'Nov 2020 - Dec 2021',
       bullets: [
-        'Built internal tooling in Python for hardware validation and regression execution.',
-        'Contributed to low-level C++ modules for binary parsing and diagnostics.'
+        'Optimized distributed data processing pipeline handling 100K+ requests per second using Python multiprocessing and connection pooling, reducing latency by 20% and increasing throughput by 15% for 50K+ daily active users.',
+        'Built fault-tolerant microservices with circuit breakers and retry mechanisms achieving 99.9% uptime, and implemented feature toggles and A/B testing for data-driven rollouts.',
+        'Automated Python-based deployment pipeline reducing deployment time by 40% through parallel testing and smart test selection, accelerating feature delivery by 40% while maintaining 80% code coverage.',
+        'Worked cross-functionally with Quality Assurance and software teams to deploy performance patches in agile sprints.'
       ]
     }
   ],
@@ -58,9 +67,9 @@ export const contentLibrary = {
       title: 'Python Real-Time Transit Data Aggregation Service',
       category: 'Software Engineering',
       highlights: [
-        'Aggregated GTFS-realtime feeds and weather events into a unified stream for city-wide transit monitoring.',
-        'Used Python async workers and Redis queues to support burst traffic with stable latency.',
-        'Published metrics and alerting hooks to improve on-call response quality.'
+        'Architected a Python-based system that integrates live arrival data from 7 Metropolitan Transportation Authority feeds across 22 subway lines, parsing binary protobuf data and delivering per-direction schedules with sub-1s latency at 400 to 500 daily requests.',
+        'Built optimized feed-routing logic mapping each train line to its source endpoint, reducing unnecessary API calls by up to 85% on targeted queries.',
+        'Deployed on Render with fault-tolerant recovery and zero-downtime restarts.'
       ]
     },
     {
@@ -68,9 +77,9 @@ export const contentLibrary = {
       title: 'C++-Based Huffman Compression System',
       category: 'Software Engineering',
       highlights: [
-        'Implemented entropy encoding and decoding with a focus on deterministic performance.',
-        'Benchmarked memory usage and throughput across text and binary corpora.',
-        'Packaged a CLI workflow with reproducible test vectors for regression testing.'
+        'Executed a C++ compression utility using Huffman coding with memory management, bit-level operations, and efficient file I/O.',
+        'Developed a high-performance file compression tool implementing Huffman coding algorithm for optimal data storage solutions.',
+        'Achieved 47% size reduction with 1.89:1 compression ratio and sub-second processing for 2MB files, with 0.28s encoding and 0.37s decoding performance.'
       ]
     },
     {
@@ -78,27 +87,36 @@ export const contentLibrary = {
       title: 'Biometric Fingerprint Identification System',
       category: 'Hardware/FPGA',
       highlights: [
-        'Designed a feature extraction pipeline for minutiae matching from grayscale images.',
-        'Integrated pre-processing and template comparison modules with accuracy tracking.',
-        'Documented model and threshold tuning across noisy and partial-print datasets.'
+        'Developed a biometric fingerprint identification system using Python and OpenCV that processes raw fingerprint images through a 3-stage pipeline including background removal, ridge enhancement, and SIFT feature extraction.',
+        'Implemented FLANN-based matching algorithm with geometric verification using RANSAC, achieving greater than 90% accuracy with 15+ keypoint correspondences and reducing false positives by 40%.',
+        'Built complete end-to-end solution with Tkinter GUI for real-time processing at about 4 seconds per fingerprint comparison.'
       ]
     },
     {
       id: 'fix-parser',
-      title: 'Ultra-Low-Latency FIX Parser',
+      title: 'Distributed Ultra-Low-Latency Message Parsing Engine',
       category: 'Quantitative Research',
       highlights: [
-        'Built a zero-copy parser in C++ for streaming FIX messages with strict schema validation.',
-        'Reduced parse latency by optimizing field lookup and buffer reuse paths.',
-        'Added deterministic benchmarks and protocol edge-case test coverage.'
+        'Engineered a performance-optimized message parsing engine in C++ and Verilog on FPGA for ultra-low-latency FIX parsing in HFT systems.',
+        'Designed a custom FSM-driven architecture with a round-robin FIFO buffer for parallel message storage and precompiled BRAM lookup tables for rapid tag=value mapping and real-time validation.',
+        'Projected up to 200x faster processing with latencies in the 50 microsecond range and throughput in millions of messages per second compared to CPU-based parsing with around 7ms average latency.'
       ]
     }
   ],
   skills: {
-    Software: ['Python', 'C++', 'TypeScript', 'Node.js', 'SQL'],
-    Hardware: ['Verilog', 'SystemVerilog', 'FPGA Bring-Up', 'Timing Analysis'],
-    Protocols: ['FIX', 'TCP/IP', 'WebSocket', 'REST'],
-    Tools: ['Git', 'Docker', 'Linux', 'Vivado', 'CI/CD']
+    Programming: ['C', 'C++ (Modern C++)', 'Python (PyTorch, NumPy, Pandas, SciPy)', 'Verilog', 'SystemVerilog'],
+    'Development Tools': [
+      'Git',
+      'Linux',
+      'MySQL',
+      'Cocotb/Pytest for verification',
+      'Selenium',
+      'Xilinx Vivado',
+      'Matlab',
+      'Cadence Virtuoso/Innovus'
+    ],
+    'Systems and Methodologies': ['Object-Oriented Design', 'Design Patterns', 'Multithreading', 'Distributed Systems', 'Agile / Scrum'],
+    'Protocols and Techniques': ['Ethernet (TCP/IP)', 'System-level optimization', 'Data Processing Pipelines', 'Fault Tolerant Systems']
   }
 };
 
