@@ -1,19 +1,19 @@
 export const contentLibrary = {
   profile: {
     name: 'Chandra Kiran Narala',
-    title: 'Software Engineer',
+    title: 'Software/Hardware Co-design Engineer',
     location: 'New York, NY',
-    email: 'naralachandrakiran24@gmail.com',
+    email: 'chandrakirannarala@gmail.com',
     phone: '1-551-331-7492',
     links: [{ label: 'LinkedIn', url: 'linkedin.com/in/chandrakirannarala' }]
   },
   summaries: {
-    'Software Engineering':
-      'Software Engineer with experience building distributed data pipelines, high-throughput microservices, and performance-critical systems in Python and C++. Strong background in scalable system design, fault-tolerant architectures, and algorithm optimization, with a track record of shipping production systems under real-time constraints.',
-    'Hardware/FPGA':
-      'Hardware and FPGA engineer with hands-on development in Verilog and low-latency systems. Experienced in translating protocol requirements into deterministic, testable designs for production environments.',
-    'Quantitative Research':
-      'Quantitative researcher and engineer with strong programming depth in Python and C++. Builds reproducible research pipelines, latency-sensitive execution components, and data-driven models for decision support.'
+    'Hardware / FPGA Focus':
+      'Hardware Engineer specializing in low-latency, performance-critical systems. Strong expertise in modern C++, multithreading, memory optimization, and real-time system design, with hands-on experience building hardware-accelerated pipelines using FPGAs and HDL toolchains.',
+    'Software / Hardware Co-design':
+      'Software/Hardware co-design Engineer with MS in Electrical Engineering and strong experience in high-performance systems, hardware acceleration. Skilled in Python, C++, and Verilog with a deep foundation in algorithms, computer architecture, and system-level optimization.',
+    'Low Latency / HFT Focus':
+      'Engineer with expertise in low-latency FPGA design, RTL coding, and hardware acceleration. Experienced in optimizing high-performance computing systems for ultra-low latency applications, including algorithmic trading and high-speed networking.'
   },
   education: [
     {
@@ -21,7 +21,13 @@ export const contentLibrary = {
       school: 'NYU Tandon',
       location: 'USA',
       dates: 'Jan 2022 - May 2024',
-      courses: ['Computer System Architecture', 'Advanced VLSI', 'Advanced Hardware Design', 'DSP']
+      courses: [
+        'Computer System Architecture',
+        'Advanced VLSI',
+        'Advanced Hardware Design',
+        'DSP',
+        'Physics of Quantum Computing'
+      ]
     },
     {
       degree: 'Bachelors in Electronics and Communications Engineering',
@@ -29,11 +35,10 @@ export const contentLibrary = {
       location: 'India',
       dates: 'Jul 2016 - Sept 2020',
       courses: [
-        'Data Structures and Algorithms',
-        'System Design and Optimization',
+        'Data Structures & Algorithms',
+        'System Design & Optimization',
         'Computer Architecture',
-        'Digital Signal Processing',
-        'OS'
+        'Digital Logic Design'
       ]
     }
   ],
@@ -63,48 +68,91 @@ export const contentLibrary = {
   ],
   projects: [
     {
+      id: 'ultra-low-latency-fix-parser',
+      title: 'Ultra-Low Latency FPGA-Based FIX Parser',
+      category: 'Low Latency / HFT Focus',
+      highlights: [
+        'Engineered a horizontally scalable microservice parser (Verilog/Python) on FPGA for ultra-low latency FIX parsing in HFTs.',
+        'Designed a custom FSM-driven design featuring a round-robin FIFO buffer for parallel message storage and precompiled BRAM lookup tables for rapid tag=value mapping and real-time validation, thereby eliminating the runtime overhead of XML parsing.',
+        'Projected to achieve up to 200 times faster processing; delivering latencies in 30 microseconds range and handling millions of messages per second compared to CPU-based parsing, with 7ms average latency.'
+      ]
+    },
+    {
       id: 'transit-aggregation-service',
       title: 'Python Real-Time Transit Data Aggregation Service',
-      category: 'Software Engineering',
+      category: 'Software / Hardware Co-design',
       highlights: [
-        'Architected a Python-based system that integrates live arrival data from 7 Metropolitan Transportation Authority feeds across 22 subway lines, parsing binary protobuf data and delivering per-direction schedules with sub-1s latency at 400 to 500 daily requests.',
-        'Built optimized feed-routing logic mapping each train line to its source endpoint, reducing unnecessary API calls by up to 85% on targeted queries.',
-        'Deployed on Render with fault-tolerant recovery and zero-downtime restarts.'
+        'Architected a Python-based system that integrates live arrival data from 7 Metropolitan Transportation Authority feeds across 22 subway lines, parsing binary protobuf data and delivering per-direction schedules with sub-1s latency at 400-500 daily requests.',
+        'Built optimized feed-routing logic mapping each train line to its source endpoint, reducing unnecessary API calls by up to 85% on targeted queries, and deployed on Render with fault-tolerant recovery and zero-downtime restarts.'
       ]
     },
     {
       id: 'huffman-compression',
       title: 'C++-Based Huffman Compression System',
-      category: 'Software Engineering',
+      category: 'Software / Hardware Co-design',
       highlights: [
-        'Executed a C++ compression utility using Huffman coding with memory management, bit-level operations, and efficient file I/O.',
         'Developed a high-performance file compression tool implementing Huffman coding algorithm for optimal data storage solutions.',
-        'Achieved 47% size reduction with 1.89:1 compression ratio and sub-second processing for 2MB files, with 0.28s encoding and 0.37s decoding performance.'
+        'Achieved 47% size reduction with 1.89:1 compression ratio and sub-second processing for 2MB files.',
+        'Delivered perfect lossless reconstruction with 0.28s encoding and 0.37s decoding performance.'
       ]
     },
     {
       id: 'fingerprint-identification',
       title: 'Biometric Fingerprint Identification System',
-      category: 'Hardware/FPGA',
+      category: 'Software / Hardware Co-design',
       highlights: [
         'Developed a biometric fingerprint identification system using Python and OpenCV that processes raw fingerprint images through a 3-stage pipeline including background removal, ridge enhancement, and SIFT feature extraction.',
-        'Implemented FLANN-based matching algorithm with geometric verification using RANSAC, achieving greater than 90% accuracy with 15+ keypoint correspondences and reducing false positives by 40%.',
-        'Built complete end-to-end solution with Tkinter GUI for real-time processing at about 4 seconds per fingerprint comparison.'
+        'Implemented FLANN-based matching algorithm with geometric verification using RANSAC, achieving greater than 90% accuracy with 15+ keypoint correspondences and reducing false positives by 40%, by processing comparisons in ~4 seconds per fingerprint.'
       ]
     },
     {
-      id: 'fix-parser',
-      title: 'Distributed Ultra-Low-Latency Message Parsing Engine',
-      category: 'Quantitative Research',
+      id: 'object-detection-zynq7000',
+      title: 'Object Detection Model on Zynq-7000 SoC FPGA',
+      category: 'Hardware / FPGA Focus',
       highlights: [
-        'Engineered a performance-optimized message parsing engine in C++ and Verilog on FPGA for ultra-low-latency FIX parsing in HFT systems.',
-        'Designed a custom FSM-driven architecture with a round-robin FIFO buffer for parallel message storage and precompiled BRAM lookup tables for rapid tag=value mapping and real-time validation.',
-        'Projected up to 200x faster processing with latencies in the 50 microsecond range and throughput in millions of messages per second compared to CPU-based parsing with around 7ms average latency.'
+        'Deployed YOLOv8 in an autoscaling FPGA cluster, achieving the same performance while reducing power consumption by 96% compared to an Intel i5, reduced BRAM usage and minimized DSP block utilization.',
+        'Integrated CNN using Vitis HLS and Vivado on a Zynq-7000 SoC, achieving real-time detection with a 3.2 Tbps throughput.'
+      ]
+    },
+    {
+      id: 'moving-average-crossover',
+      title: 'Moving Average Crossover Trading Strategy',
+      category: 'Low Latency / HFT Focus',
+      highlights: [
+        'Engineered Python-based backtesting framework using Backtrader and Matplotlib to process and analyze 2 years of historical market data of BTC across 500+ trading sessions, enhancing processing efficiency by 30%.',
+        'Implemented a dual moving average crossover strategy (10-day and 20-day SMAs) that automated precise buy/sell signals, improving the Sharpe Ratio to 1.2 and optimizing risk-adjusted returns.'
+      ]
+    },
+    {
+      id: 'riscv-rv321',
+      title: 'RISC-V RV321 32-bit Processor',
+      category: 'Hardware / FPGA Focus',
+      highlights: [
+        'Architected a 32-bit RISC-V RV321 processor in Verilog, integrating a 5-stage pipeline for efficient instruction execution.',
+        'Deployed an FPGA Basys3 board, achieving 100MHz operation with optimized timing constraints and logic utilization.'
+      ]
+    },
+    {
+      id: 'artix7-pong',
+      title: 'Low Latency Pong Game on Artix-7 FPGA',
+      category: 'Hardware / FPGA Focus',
+      highlights: [
+        'Designed and implemented a Pong game on Artix-7 FPGA using Verilog and VGA controller for 640x480 resolution at 60Hz.',
+        'Developed custom finite state machines for low-latency paddle control, ball movement, and score tracking.'
       ]
     }
   ],
   skills: {
-    Programming: ['C', 'C++ (Modern C++)', 'Python (PyTorch, NumPy, Pandas, SciPy)', 'Verilog', 'SystemVerilog'],
+    Programming: [
+      'C',
+      'C++ (Modern C++)',
+      'Python (PyTorch, NumPy, Pandas, SciPy)',
+      'Java',
+      'Verilog',
+      'SystemVerilog',
+      'VHDL',
+      'x86 Assembly Level'
+    ],
     'Development Tools': [
       'Git',
       'Linux',
@@ -113,10 +161,28 @@ export const contentLibrary = {
       'Selenium',
       'Xilinx Vivado',
       'Matlab',
-      'Cadence Virtuoso/Innovus'
+      'Cadence Virtuoso/Innovus',
+      'Altera Quartus Prime'
     ],
-    'Systems and Methodologies': ['Object-Oriented Design', 'Design Patterns', 'Multithreading', 'Distributed Systems', 'Agile / Scrum'],
-    'Protocols and Techniques': ['Ethernet (TCP/IP)', 'System-level optimization', 'Data Processing Pipelines', 'Fault Tolerant Systems']
+    'Systems and Methodologies': [
+      'Object-Oriented Design',
+      'Design Patterns',
+      'Multithreading',
+      'Distributed Systems',
+      'Agile / Scrum',
+      'FSM-based Architecture',
+      'REST APIs'
+    ],
+    'Protocols and Techniques': [
+      'Ethernet (TCP/IP)',
+      'FIX Protocol',
+      'I2C',
+      'SPI',
+      'PCIe',
+      'UART',
+      'RS-232',
+      'System-level optimization'
+    ]
   }
 };
 
